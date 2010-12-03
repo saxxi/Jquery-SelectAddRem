@@ -21,7 +21,7 @@ Usage
 	$myselect.rm_option($myselect.find('option:first'));
 	
 	// show hidden option
-	$myselect.add_option($myselect.find('option:first'));
+	$myselect.add_option($myselect.all_options.eq(0));
 	
 	// get visible options
     $myselect.find('option');
