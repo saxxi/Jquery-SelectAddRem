@@ -1,12 +1,10 @@
-SelectAddRem
+SelectAddRem (jQuery plugin)
 ======
 
-Collects all dropdown menu and permits adding and removing options by their value.
-As other css methods were not working for hiding select options we tried through js.
+Cross-browser solution to hide / show options in a select.
 
 In specific:
-
-* found "select > option display:none" buggy on IE
+* found "select > option display:none" not supported in IE, Safari, Chrome
 * "select > option visibility:hidden" was leaving height issue
 
 
@@ -15,18 +13,23 @@ Usage
 
 ### Initialize
 
-	var selectaddrem;
-	selectaddrem = new SelectAddRem('select');
-	
-	or
-	
-	selectaddrem = new SelectAddRem('select .onlythese'); // jquery notation
+	var $myselect = $('#myselect').SelectAddRem();
 
 ### Usage
 
-	selectaddrem.rem('my_select_id', 'value_1');
-	selectaddrem.add('my_select_id', 'value_1');
-
+	// hide option
+	$myselect.rm_option($myselect.find('option:first'));
+	
+	// show hidden option
+	$myselect.add_option($myselect.rm_option($myselect.find('option:first')));
+	
+	// get visible options
+    $myselect.find('option');
+    
+    // get all options (visible + invisible)
+    $myselect.all_options;
+    
+    option visibility is set by data attribute "data-selectaddremvisibility", which takes values "0" (invisible) or "1" (visible).
 
 Author
 ------
