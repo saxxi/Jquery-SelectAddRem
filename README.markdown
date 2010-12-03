@@ -21,7 +21,7 @@ Usage
 	$myselect.rm_option($myselect.find('option:first'));
 	
 	// show hidden option
-	$myselect.add_option($myselect.rm_option($myselect.find('option:first')));
+	$myselect.add_option($myselect.find('option:first'));
 	
 	// get visible options
     $myselect.find('option');
@@ -29,7 +29,8 @@ Usage
     // get all options (visible + invisible)
     $myselect.all_options;
     
-    option visibility is set by data attribute "data-selectaddremvisibility", which takes values "0" (invisible) or "1" (visible).
+
+option visibility is set by data attribute "data-selectaddremvisibility", which takes values "0" (invisible) or "1" (visible).
 
 Author
 ------
